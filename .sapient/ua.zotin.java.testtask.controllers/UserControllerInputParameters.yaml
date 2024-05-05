@@ -1,0 +1,843 @@
+---
+modelFingerprint: "65C838F4CE168308965BC7EA19151DC6"
+targetClass:
+  fullClassName: "ua.zotin.java.testtask.controllers.UserController"
+methods:
+- method:
+    name: "getUsers"
+    sourceCodeSignature: "ResponseEntity<List<UserDto>> getUsers()"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.util.List<ua.zotin.java.testtask.dto.UserDto>"
+    instructionFingerprint: "8747AE5ADAF8B84938505FEF4B0038B1"
+  paths:
+  - pathId: "path1"
+    testPathName: "getUsersTest"
+    constructorSignature: "<init>(ua.zotin.java.testtask.services.UserService) : void"
+    modelFingerprint: "202299B20C0C94B6F06129F39589993F"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "005B66F9B354C7D6A4E6598070B9439D"
+      valueUuid: "target"
+    - type: "FIELD"
+      name: "userService"
+      modelFingerprint: "9DAF7D65C9CF28F92F3FB64B122B9D7E"
+      valueUuid: "userService"
+      methodExercised:
+        expression: "getUsers():list"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "02F01D83C526A72F6203EEF7D3F6F75F"
+      valueUuid: "responseEntity"
+    uuid: "69664890-262d-3dce-8cb1-7f58bd4fe6f7"
+    disabled: false
+    failureReason:
+      reason: "METHOD_CALL_INSTRUCTION_CONSTRUCTION_FAILURE"
+      source: "return new ResponseEntity<>(users, HttpStatus.OK);"
+      lineNumber: 42
+      details: "No constructor found to create an object without any exception for\
+        \ class org.springframework.http.ResponseEntity"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.controllers.UserController"
+        parameters:
+        - name: "userService"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.services.UserService"
+            uuid: "userService"
+      valueType: "ua.zotin.java.testtask.controllers.UserController"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.services.UserService"
+      uuid: "userService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "list"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              parameters: []
+              values: []
+            valueType: "java.util.List"
+            genericValueType: "ua.zotin.java.testtask.dto.UserDto"
+            uuid: "list"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "OK"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-OK"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.List<ua.zotin.java.testtask.dto.UserDto>"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "createUser"
+    sourceCodeSignature: "ResponseEntity<User> createUser(@Valid @RequestBody UserDto\
+      \ userDto)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "ua.zotin.java.testtask.entities.User"
+    parameters:
+    - name: "userDto"
+      type: "ua.zotin.java.testtask.dto.UserDto"
+    instructionFingerprint: "F98B5A6695E1CEDA568DA62B8C252D1E"
+  paths:
+  - pathId: "path1"
+    testPathName: "createUserTest"
+    constructorSignature: "<init>(ua.zotin.java.testtask.services.UserService) : void"
+    modelFingerprint: "963A0D3C48590FE1B9502EFC467E79C8"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "005B66F9B354C7D6A4E6598070B9439D"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "userDto"
+      modelFingerprint: "FCFD973644A709E5CADFB0AD497447DC"
+      valueUuid: "userDto"
+    - type: "LOCAL_VARIABLE"
+      name: "userDto"
+      modelFingerprint: "50C30AB3B7B6328E5379F047B264EDEE"
+      valueUuid: "userDto"
+      methodExercised:
+        expression: "getFirstName():firstName"
+    - type: "FIELD"
+      name: "userService"
+      modelFingerprint: "314ABCBF25FB854400D9081552B409E5"
+      valueUuid: "userService"
+      methodExercised:
+        expression: "createUser(userDto:userDto):user"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "8EC501E4998255A3120358FD33122319"
+      valueUuid: "responseEntity"
+    uuid: "c21d3ed3-7747-39fb-bfef-184c2bc23343"
+    disabled: false
+    failureReason:
+      reason: "METHOD_CALL_INSTRUCTION_CONSTRUCTION_FAILURE"
+      source: "return new ResponseEntity<>(newUser, HttpStatus.CREATED);"
+      lineNumber: 51
+      details: "No constructor found to create an object without any exception for\
+        \ class org.springframework.http.ResponseEntity"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.controllers.UserController"
+        parameters:
+        - name: "userService"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.services.UserService"
+            uuid: "userService"
+      valueType: "ua.zotin.java.testtask.controllers.UserController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.dto.UserDto"
+        parameters:
+        - name: "id"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "java.lang.Long"
+            uuid: "userDto-id"
+        - name: "email"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "userDto-email"
+        - name: "firstName"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "firstName"
+        - name: "lastName"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "lastName1"
+            valueType: "java.lang.String"
+            uuid: "userDto-lastName"
+        - name: "birthDate"
+          value:
+            sapientType: "OBJECT"
+            content: !<static_method_return>
+              target: "java.time.LocalDate"
+              method: "now"
+              methodParameters: []
+            valueType: "java.time.LocalDate"
+            uuid: "userDto-birthDate"
+        - name: "address"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "address1"
+            valueType: "java.lang.String"
+            uuid: "userDto-address"
+        - name: "phone"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "phone1"
+            valueType: "java.lang.String"
+            uuid: "userDto-phone"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.dto.UserDto"
+        parameters:
+        - name: "id"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "java.lang.Long"
+            uuid: "userDto-id"
+        - name: "email"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "userDto-email"
+        - name: "firstName"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "firstName"
+        - name: "lastName"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "lastName1"
+            valueType: "java.lang.String"
+            uuid: "userDto-lastName"
+        - name: "birthDate"
+          value:
+            sapientType: "OBJECT"
+            content: !<static_method_return>
+              target: "java.time.LocalDate"
+              method: "now"
+              methodParameters: []
+            valueType: "java.time.LocalDate"
+            uuid: "userDto-birthDate"
+        - name: "address"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "address1"
+            valueType: "java.lang.String"
+            uuid: "userDto-address"
+        - name: "phone"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "phone1"
+            valueType: "java.lang.String"
+            uuid: "userDto-phone"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "firstName"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.services.UserService"
+      uuid: "userService"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.entities.User"
+      uuid: "user"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.dto.UserDto"
+        parameters:
+        - name: "id"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "java.lang.Long"
+            uuid: "userDto-id"
+        - name: "email"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "email1"
+            valueType: "java.lang.String"
+            uuid: "userDto-email"
+        - name: "firstName"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "A"
+            valueType: "java.lang.String"
+            uuid: "firstName"
+        - name: "lastName"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "lastName1"
+            valueType: "java.lang.String"
+            uuid: "userDto-lastName"
+        - name: "birthDate"
+          value:
+            sapientType: "OBJECT"
+            content: !<static_method_return>
+              target: "java.time.LocalDate"
+              method: "now"
+              methodParameters: []
+            valueType: "java.time.LocalDate"
+            uuid: "userDto-birthDate"
+        - name: "address"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "address1"
+            valueType: "java.lang.String"
+            uuid: "userDto-address"
+        - name: "phone"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "phone1"
+            valueType: "java.lang.String"
+            uuid: "userDto-phone"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.entities.User"
+            uuid: "user"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "CREATED"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-CREATED"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "ua.zotin.java.testtask.entities.User"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "updateUserPatch"
+    sourceCodeSignature: "ResponseEntity<UserDto> updateUserPatch(@PathVariable(\\\
+      \"id\\\") Long id, @RequestBody UserDto userDto)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "ua.zotin.java.testtask.dto.UserDto"
+    parameters:
+    - name: "id"
+      type: "java.lang.Long"
+    - name: "userDto"
+      type: "ua.zotin.java.testtask.dto.UserDto"
+    instructionFingerprint: "968DAB939ED63E084E97142C7E9B80C1"
+  paths:
+  - pathId: "path1"
+    testPathName: "updateUserPatchTest"
+    constructorSignature: "<init>(ua.zotin.java.testtask.services.UserService) : void"
+    modelFingerprint: "6BD733B0B036459DA75ACFA78CAC34B5"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "005B66F9B354C7D6A4E6598070B9439D"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "userDto"
+      modelFingerprint: "77D6BB21EF0090171843B5F936FD0855"
+      valueUuid: "userDto"
+    - type: "FIELD"
+      name: "userService"
+      modelFingerprint: "7243152689899F0627637D370F8602DC"
+      valueUuid: "userService"
+      methodExercised:
+        expression: "updateUserPatch(userDto:userDto,id:id):userDto2"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "E721B305B68213F3452737FF9A1E23D5"
+      valueUuid: "responseEntity"
+    uuid: "b5184058-2ea0-33a9-9077-e79cdf97f1cc"
+    disabled: false
+    failureReason:
+      reason: "METHOD_CALL_INSTRUCTION_CONSTRUCTION_FAILURE"
+      source: "return new ResponseEntity<>(user, HttpStatus.OK);"
+      lineNumber: 61
+      details: "No constructor found to create an object without any exception for\
+        \ class org.springframework.http.ResponseEntity"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.controllers.UserController"
+        parameters:
+        - name: "userService"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.services.UserService"
+            uuid: "userService"
+      valueType: "ua.zotin.java.testtask.controllers.UserController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.services.UserService"
+      uuid: "userService"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto2"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.dto.UserDto"
+            uuid: "userDto2"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "OK"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-OK"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "updateUserPut"
+    sourceCodeSignature: "ResponseEntity<UserDto> updateUserPut(@PathVariable(\\\"\
+      id\\\") Long id, @Valid @RequestBody UserDto userDto)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "ua.zotin.java.testtask.dto.UserDto"
+    parameters:
+    - name: "id"
+      type: "java.lang.Long"
+    - name: "userDto"
+      type: "ua.zotin.java.testtask.dto.UserDto"
+    instructionFingerprint: "9D9325E737D26E4151696DB31FFB2C51"
+  paths:
+  - pathId: "path1"
+    testPathName: "updateUserPutTest"
+    constructorSignature: "<init>(ua.zotin.java.testtask.services.UserService) : void"
+    modelFingerprint: "E55C2C9ECB6E809164CC51B81BE76A0F"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "005B66F9B354C7D6A4E6598070B9439D"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      valueUuid: "id"
+    - type: "INPUT"
+      name: "userDto"
+      modelFingerprint: "77D6BB21EF0090171843B5F936FD0855"
+      valueUuid: "userDto"
+    - type: "FIELD"
+      name: "userService"
+      modelFingerprint: "5F66A25E3C557C2D7A0E2B7D3D5F5DA2"
+      valueUuid: "userService"
+      methodExercised:
+        expression: "updateUserPut(userDto:userDto,id:id):userDto2"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "E721B305B68213F3452737FF9A1E23D5"
+      valueUuid: "responseEntity"
+    uuid: "4eb51558-24f4-3ddb-ade6-3a822713df51"
+    disabled: false
+    failureReason:
+      reason: "METHOD_CALL_INSTRUCTION_CONSTRUCTION_FAILURE"
+      source: "return new ResponseEntity<>(user, HttpStatus.OK);"
+      lineNumber: 69
+      details: "No constructor found to create an object without any exception for\
+        \ class org.springframework.http.ResponseEntity"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.controllers.UserController"
+        parameters:
+        - name: "userService"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.services.UserService"
+            uuid: "userService"
+      valueType: "ua.zotin.java.testtask.controllers.UserController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.services.UserService"
+      uuid: "userService"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto2"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.dto.UserDto"
+            uuid: "userDto2"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "OK"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-OK"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "deleteUser"
+    sourceCodeSignature: "ResponseEntity<String> deleteUser(@PathVariable(\\\"id\\\
+      \") Long id)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.lang.String"
+    parameters:
+    - name: "id"
+      type: "java.lang.Long"
+    instructionFingerprint: "B1857C0B42F5F2204AD13F5CB6CECFDD"
+  paths:
+  - pathId: "path1"
+    testPathName: "deleteUserTest"
+    constructorSignature: "<init>(ua.zotin.java.testtask.services.UserService) : void"
+    modelFingerprint: "43EA80C4233E90D97C1C98722DFCDD38"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4302A74126ABD9D146FDAD0FF51EFFB5"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "4210AE1C7F26E55784EDEE5B83B86654"
+      valueUuid: "id"
+    - type: "FIELD"
+      name: "userService"
+      modelFingerprint: "E454D341F5F3A7E3A726D43A99DA66E2"
+      valueUuid: "userService"
+      methodExercised:
+        expression: "deleteUserById(id:id):void"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "C8BB29B115CC0411892B19FE8B0DCE39"
+      valueUuid: "responseEntity"
+    uuid: "1d20344c-e369-3a0b-b44c-5b301c0d1043"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.controllers.UserController"
+        parameters:
+        - name: "userService"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.services.UserService"
+            uuid: "userService"
+      valueType: "ua.zotin.java.testtask.controllers.UserController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 2
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.services.UserService"
+      uuid: "userService"
+    - sapientType: "VOID"
+      valueType: "void"
+      uuid: "void"
+      fixed: true
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 2
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "You have deleted customer with id: 2"
+            valueType: "java.lang.String"
+            fixed: true
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "OK"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-OK"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "searchUsersByBirthDateRange"
+    sourceCodeSignature: "ResponseEntity<List<User>> searchUsersByBirthDateRange(@RequestParam(\\\
+      \"from\\\") @DateTimeFormat(pattern = \\\"yyyy-MM-dd\\\") LocalDate from, @RequestParam(\\\
+      \"to\\\") @DateTimeFormat(pattern = \\\"yyyy-MM-dd\\\") LocalDate to)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.util.List<ua.zotin.java.testtask.entities.User>"
+    parameters:
+    - name: "from"
+      type: "java.time.LocalDate"
+    - name: "to"
+      type: "java.time.LocalDate"
+    instructionFingerprint: "BBE342B40F4A0DFE367143DDE10F0863"
+  paths:
+  - pathId: "path1"
+    testPathName: "searchUsersByBirthDateRangeWhenFromIsAfterToThrowsFromAndToException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.services.UserService) : void"
+    modelFingerprint: "3D9EA5A9E3D393A8817E0FCAA2613FDE"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "FC9380395A8FC72D7713D0D6348C3504"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "from"
+      modelFingerprint: "7EF7B35709292697B0D62CB6BF888ABE"
+      valueUuid: "from"
+    - type: "INPUT"
+      name: "to"
+      modelFingerprint: "7B6AEC15F932F9B0F4487B43BCDF6C76"
+      valueUuid: "to"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "EDAE144EDBFF437EE4C4BA894C2419A4"
+      valueUuid: "fromAndToException"
+    uuid: "54347d31-57ac-3e86-ade9-5b0d9b174f7a"
+    disabled: true
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.time.LocalDate.isAfter(java.time.LocalDate)\
+        \ : boolean"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.controllers.UserController"
+        parameters:
+        - name: "userService"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.services.UserService"
+            uuid: "userService"
+      valueType: "ua.zotin.java.testtask.controllers.UserController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDate"
+        method: "now"
+        methodParameters: []
+      valueType: "java.time.LocalDate"
+      uuid: "from"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDate"
+        method: "now"
+        methodParameters: []
+      valueType: "java.time.LocalDate"
+      uuid: "to"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.FromAndToException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "'From' date must be before 'To' date"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "ua.zotin.java.testtask.exceptions.FromAndToException"
+      uuid: "fromAndToException"
+      fixed: true
+    branches:
+    - lineNumber: 84
+      expression: "from.isAfter(to)"
+      range: "(84,13)-(84,28)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "searchUsersByBirthDateRangeWhenFromNotIsAfterTo"
+    constructorSignature: "<init>(ua.zotin.java.testtask.services.UserService) : void"
+    modelFingerprint: "E5C07F8F6AD5B9C5BA6796FB4901456B"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "005B66F9B354C7D6A4E6598070B9439D"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "from"
+      modelFingerprint: "7EF7B35709292697B0D62CB6BF888ABE"
+      valueUuid: "from"
+    - type: "INPUT"
+      name: "to"
+      modelFingerprint: "7B6AEC15F932F9B0F4487B43BCDF6C76"
+      valueUuid: "to"
+    - type: "FIELD"
+      name: "userService"
+      modelFingerprint: "E0A9F191492AA4418C67F747644D9222"
+      valueUuid: "userService"
+      methodExercised:
+        expression: "findByBirthDateBetween(from:from,to:to):list"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "649AB035F4192C57AC9F6CEB7A1E6A20"
+      valueUuid: "responseEntity"
+    uuid: "430f897f-2265-317f-99a2-4589201b75c5"
+    disabled: false
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.time.LocalDate.isAfter(java.time.LocalDate)\
+        \ : boolean"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.controllers.UserController"
+        parameters:
+        - name: "userService"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.services.UserService"
+            uuid: "userService"
+      valueType: "ua.zotin.java.testtask.controllers.UserController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDate"
+        method: "now"
+        methodParameters: []
+      valueType: "java.time.LocalDate"
+      uuid: "from"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDate"
+        method: "now"
+        methodParameters: []
+      valueType: "java.time.LocalDate"
+      uuid: "to"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.services.UserService"
+      uuid: "userService"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      genericValueType: "ua.zotin.java.testtask.entities.User"
+      uuid: "list"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDate"
+        method: "now"
+        methodParameters: []
+      valueType: "java.time.LocalDate"
+      uuid: "from"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDate"
+        method: "now"
+        methodParameters: []
+      valueType: "java.time.LocalDate"
+      uuid: "to"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              parameters: []
+              values: []
+            valueType: "java.util.List"
+            genericValueType: "ua.zotin.java.testtask.entities.User"
+            uuid: "list"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "OK"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-OK"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.List<ua.zotin.java.testtask.entities.User>"
+      uuid: "responseEntity"
+      fixed: true
+    branches:
+    - lineNumber: 84
+      expression: "from.isAfter(to)"
+      range: "(84,13)-(84,28)"
+      evaluatedAs: false

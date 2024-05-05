@@ -1,0 +1,2451 @@
+---
+modelFingerprint: "A76F5487FD85BB526ED5EC5B05A73067"
+targetClass:
+  fullClassName: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+methods:
+- method:
+    name: "handleUserNotFoundException"
+    sourceCodeSignature: "ResponseEntity<Map<String, String>> handleUserNotFoundException(UserNotFoundException\
+      \ exception, WebRequest request)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.util.Map<java.lang.String,java.lang.String>"
+    parameters:
+    - name: "exception"
+      type: "ua.zotin.java.testtask.exceptions.UserNotFoundException"
+    - name: "request"
+      type: "org.springframework.web.context.request.WebRequest"
+    instructionFingerprint: "8A8AFEE3A1A304314EF7BBE104B924F5"
+  paths:
+  - pathId: "path1"
+    testPathName: "handleUserNotFoundExceptionTest"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "421A7BFB3A976E907A6CD5EBC2EEF87B"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "exception"
+      modelFingerprint: "80DF17D1B07D4CB3CBA167D3EFB68AEA"
+      valueUuid: "exception"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "27B75B341AC6D78A588D91B0F6A4C017"
+      valueUuid: "request"
+    - type: "LOCAL_VARIABLE"
+      name: "exception"
+      modelFingerprint: "17D77C8426EC1975E0A594857AF33B3A"
+      valueUuid: "exception"
+      methodExercised:
+        expression: "getMessage():message"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid1):string3"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "999CF4B95A6CBA091B81FEBB168E7719"
+      valueUuid: "responseEntity"
+    uuid: "89256224-0083-34df-b020-2c1fb8f16f46"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.UserNotFoundException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "message"
+      valueType: "ua.zotin.java.testtask.exceptions.UserNotFoundException"
+      uuid: "exception"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.UserNotFoundException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "message"
+      valueType: "ua.zotin.java.testtask.exceptions.UserNotFoundException"
+      uuid: "exception"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "message1"
+      valueType: "java.lang.String"
+      uuid: "message"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid1"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "message1"
+                    valueType: "java.lang.String"
+                    uuid: "message"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string3"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string6"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "INTERNAL_SERVER_ERROR"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map<java.lang.String,java.lang.String>"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "handleInvalidArgument"
+    sourceCodeSignature: "Map<String, String> handleInvalidArgument(MethodArgumentNotValidException\
+      \ exception)"
+    returnType: "java.util.Map"
+    genericReturnType: "java.lang.String,java.lang.String"
+    parameters:
+    - name: "exception"
+      type: "org.springframework.web.bind.MethodArgumentNotValidException"
+    instructionFingerprint: "31C8AC7E35684ED2978D267DF5714728"
+  paths:
+  - pathId: "path1"
+    testPathName: "handleInvalidArgumentTest"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "BAE1B061626531738C614344163BFA4A"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "exception"
+      modelFingerprint: "75CE9F8F63E71447231B4C615E4CB252"
+      valueUuid: "exception"
+    - type: "LOCAL_VARIABLE"
+      name: "exception"
+      modelFingerprint: "ED077AC6DEEFE69F2294D9559EA9BD4C"
+      valueUuid: "exception"
+      methodExercised:
+        expression: "getBindingResult():bindingResult"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "3661C4589D9EFD7516B3521BF99DFBAA"
+      valueUuid: "bindingResult"
+      methodExercised:
+        expression: "getFieldErrors():list"
+    - type: "LOCAL_VARIABLE"
+      name: "fieldError"
+      modelFingerprint: "3EC3DD1858679B7470E3FABC358A81E9"
+      valueUuid: "fieldError"
+      methodExercised:
+        expression: "getField():field"
+    - type: "LOCAL_VARIABLE"
+      name: "fieldError"
+      modelFingerprint: "52208CF1AF3A8A54409CA58E1DB83AF0"
+      valueUuid: "fieldError"
+      methodExercised:
+        expression: "getDefaultMessage():defaultMessage"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "E0F0682A3B565288C60CD47B1CE24DF3"
+      valueUuid: "treeMap"
+    uuid: "685cbaa4-816e-39fd-b5c4-d7563c128ee6"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.web.bind.MethodArgumentNotValidException"
+        parameters:
+        - name: "parameter"
+          value:
+            sapientType: "MOCK"
+            valueType: "org.springframework.core.MethodParameter"
+            uuid: "exception-parameter"
+        - name: "bindingResult"
+          value:
+            sapientType: "MOCK"
+            valueType: "org.springframework.validation.BindingResult"
+            uuid: "bindingResult"
+      valueType: "org.springframework.web.bind.MethodArgumentNotValidException"
+      uuid: "exception"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.web.bind.MethodArgumentNotValidException"
+        parameters:
+        - name: "parameter"
+          value:
+            sapientType: "MOCK"
+            valueType: "org.springframework.core.MethodParameter"
+            uuid: "exception-parameter"
+        - name: "bindingResult"
+          value:
+            sapientType: "MOCK"
+            valueType: "org.springframework.validation.BindingResult"
+            uuid: "bindingResult"
+      valueType: "org.springframework.web.bind.MethodArgumentNotValidException"
+      uuid: "exception"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.validation.BindingResult"
+      uuid: "bindingResult"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "OBJECT"
+          content: !<new>
+            target: "org.springframework.validation.FieldError"
+            parameters:
+            - name: "objectName"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "objectName1"
+                valueType: "java.lang.String"
+                uuid: "fieldError-objectName"
+            - name: "field"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "field1"
+                valueType: "java.lang.String"
+                uuid: "field"
+            - name: "defaultMessage"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "defaultMessage1"
+                valueType: "java.lang.String"
+                uuid: "defaultMessage"
+          valueType: "org.springframework.validation.FieldError"
+          uuid: "fieldError"
+          collectionUuid: "list"
+      valueType: "java.util.List"
+      genericValueType: "org.springframework.validation.FieldError"
+      uuid: "list"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.validation.FieldError"
+        parameters:
+        - name: "objectName"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "objectName1"
+            valueType: "java.lang.String"
+            uuid: "fieldError-objectName"
+        - name: "field"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "field1"
+            valueType: "java.lang.String"
+            uuid: "field"
+        - name: "defaultMessage"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "defaultMessage1"
+            valueType: "java.lang.String"
+            uuid: "defaultMessage"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+      collectionUuid: "list"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "field1"
+      valueType: "java.lang.String"
+      uuid: "field"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.validation.FieldError"
+        parameters:
+        - name: "objectName"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "objectName1"
+            valueType: "java.lang.String"
+            uuid: "fieldError-objectName"
+        - name: "field"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "field1"
+            valueType: "java.lang.String"
+            uuid: "field"
+        - name: "defaultMessage"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "defaultMessage1"
+            valueType: "java.lang.String"
+            uuid: "defaultMessage"
+      valueType: "org.springframework.validation.FieldError"
+      uuid: "fieldError"
+      collectionUuid: "list"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "defaultMessage1"
+      valueType: "java.lang.String"
+      uuid: "defaultMessage"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.TreeMap"
+        parameters: []
+        values:
+        - sapientType: "PAIR"
+          content: !<pair>
+            key:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "field1"
+              valueType: "java.lang.String"
+              uuid: "field"
+            value:
+              sapientType: "BASIC"
+              content: !<regular>
+                value: "defaultMessage1"
+              valueType: "java.lang.String"
+              uuid: "defaultMessage"
+          valueType: "java.util.Map$Entry"
+          genericValueType: "java.lang.String,java.lang.String"
+      valueType: "java.util.Map"
+      genericValueType: "java.lang.String,java.lang.String"
+      uuid: "treeMap"
+- method:
+    name: "handleHttpMessageNotReadableException"
+    sourceCodeSignature: "ResponseEntity<Map<String, String>> handleHttpMessageNotReadableException(HttpMessageNotReadableException\
+      \ ex, HttpServletRequest request, WebRequest webRequest)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.util.Map<java.lang.String,java.lang.String>"
+    parameters:
+    - name: "ex"
+      type: "org.springframework.http.converter.HttpMessageNotReadableException"
+    - name: "request"
+      type: "jakarta.servlet.http.HttpServletRequest"
+    - name: "webRequest"
+      type: "org.springframework.web.context.request.WebRequest"
+    instructionFingerprint: "B4B3C4505EC72D5E7DB88D9376C4212D"
+  paths:
+  - pathId: "path1"
+    testPathName: "handleHttpMessageNotReadableExceptionWhenRequestGetMethodEqualsPOST"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "7477E5F6F63872736EB6ED99EA415660"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "ex"
+      modelFingerprint: "53114CDF591235FBA0B4E0C00328BB15"
+      valueUuid: "ex"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "E43CBF7E2DA98885ECE5619567B77961"
+      valueUuid: "request"
+    - type: "INPUT"
+      name: "webRequest"
+      modelFingerprint: "7626EA373048F1C35DED74F38555EA16"
+      valueUuid: "webRequest"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "0FD4F07ED10E44BB76B76136EC3FB687"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getMethod():string"
+    - type: "LOCAL_VARIABLE"
+      name: "webRequest"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "webRequest"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid2):string4"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "F37331E1E0074452CDA6010B5CE171E4"
+      valueUuid: "responseEntity"
+    uuid: "2fd9d54f-6cdb-3d23-b9b2-2a516a92ef98"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.converter.HttpMessageNotReadableException"
+      uuid: "ex"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletRequest"
+      uuid: "request"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "webRequest"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "POST"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "webRequest"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid2"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "Invalid date format. Please provide the date in the\
+                        \ format 'yyyy-MM-dd'."
+                    valueType: "java.lang.String"
+                    fixed: true
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string4"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string7"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "BAD_REQUEST"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-BAD_REQUEST"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map<java.lang.String,java.lang.String>"
+      uuid: "responseEntity"
+      fixed: true
+    branches:
+    - lineNumber: 62
+      expression: "request.getMethod().equals(\\\"POST\\\")"
+      range: "(62,12)-(62,45)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "handleHttpMessageNotReadableExceptionWhenRequestGetMethodEqualsPATCH"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "CEC01F53AAF1B2B9C0C8A0C6EC0B9534"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "ex"
+      modelFingerprint: "53114CDF591235FBA0B4E0C00328BB15"
+      valueUuid: "ex"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "E43CBF7E2DA98885ECE5619567B77961"
+      valueUuid: "request"
+    - type: "INPUT"
+      name: "webRequest"
+      modelFingerprint: "7626EA373048F1C35DED74F38555EA16"
+      valueUuid: "webRequest"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "2B20C6168F948865863E71F535341A98"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getMethod():string"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "76C90FE53866C556CB134F94CF3B862D"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getMethod():string2"
+    - type: "LOCAL_VARIABLE"
+      name: "webRequest"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "webRequest"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid3):string5"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "178E67CD431F8749E5C26EECCE4FA2D2"
+      valueUuid: "responseEntity"
+    uuid: "41b70814-d361-3fa4-9da0-4559dae14254"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.converter.HttpMessageNotReadableException"
+      uuid: "ex"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletRequest"
+      uuid: "request"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "webRequest"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "PATCH"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "webRequest"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid3"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "Invalid data format"
+                    valueType: "java.lang.String"
+                    fixed: true
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string5"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string8"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "BAD_REQUEST"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-BAD_REQUEST"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map<java.lang.String,java.lang.String>"
+      uuid: "responseEntity"
+      fixed: true
+    branches:
+    - lineNumber: 62
+      expression: "request.getMethod().equals(\\\"POST\\\")"
+      range: "(62,12)-(62,45)"
+      evaluatedAs: false
+    - lineNumber: 68
+      expression: "request.getMethod().equals(\\\"PATCH\\\")"
+      range: "(68,19)-(68,53)"
+      evaluatedAs: true
+  - pathId: "path3"
+    testPathName: "handleHttpMessageNotReadableExceptionWhenRequestGetMethodNotEqualsPATCH"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "42745312794F29FE03F94FEE4A2480E0"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "ex"
+      modelFingerprint: "53114CDF591235FBA0B4E0C00328BB15"
+      valueUuid: "ex"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "E43CBF7E2DA98885ECE5619567B77961"
+      valueUuid: "request"
+    - type: "INPUT"
+      name: "webRequest"
+      modelFingerprint: "7626EA373048F1C35DED74F38555EA16"
+      valueUuid: "webRequest"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "E3E457400DD5EE4687DC6CF81F63E924"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getMethod():string"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "0409AAC3E6BD51C3D453A05CAFE4F4B9"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getMethod():string2"
+    - type: "LOCAL_VARIABLE"
+      name: "webRequest"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "webRequest"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid4):string5"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "390C0EC20AE77675D3107C3939EE115B"
+      valueUuid: "responseEntity"
+    uuid: "12345a39-25c4-30a0-851a-cb96aedea63b"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.converter.HttpMessageNotReadableException"
+      uuid: "ex"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletRequest"
+      uuid: "request"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "webRequest"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "MOCK"
+      valueType: "jakarta.servlet.http.HttpServletRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "D"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "webRequest"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid4"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "Bad request"
+                    valueType: "java.lang.String"
+                    fixed: true
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string5"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string8"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "BAD_REQUEST"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-BAD_REQUEST"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map<java.lang.String,java.lang.String>"
+      uuid: "responseEntity"
+      fixed: true
+    branches:
+    - lineNumber: 62
+      expression: "request.getMethod().equals(\\\"POST\\\")"
+      range: "(62,12)-(62,45)"
+      evaluatedAs: false
+    - lineNumber: 68
+      expression: "request.getMethod().equals(\\\"PATCH\\\")"
+      range: "(68,19)-(68,53)"
+      evaluatedAs: false
+- method:
+    name: "handleDataReadFromFilePropertiesException"
+    sourceCodeSignature: "ResponseEntity<Map<String, String>> handleDataReadFromFilePropertiesException(DataReadFromFilePropertiesException\
+      \ exception, WebRequest request)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.util.Map<java.lang.String,java.lang.String>"
+    parameters:
+    - name: "exception"
+      type: "ua.zotin.java.testtask.exceptions.DataReadFromFilePropertiesException"
+    - name: "request"
+      type: "org.springframework.web.context.request.WebRequest"
+    instructionFingerprint: "D46B90C8813B25EA08BCCDC2A83CB08F"
+  paths:
+  - pathId: "path1"
+    testPathName: "handleDataReadFromFilePropertiesExceptionTest"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "84C5581F9538980CD9FE1050C6331212"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "exception"
+      modelFingerprint: "CF9D5C67F70BB491ECFA430DDE26180A"
+      valueUuid: "exception"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "27B75B341AC6D78A588D91B0F6A4C017"
+      valueUuid: "request"
+    - type: "LOCAL_VARIABLE"
+      name: "exception"
+      modelFingerprint: "4D0B0A206A419DBBC3F64B51FE1F43E3"
+      valueUuid: "exception"
+      methodExercised:
+        expression: "getMessage():message"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid5):string3"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "999CF4B95A6CBA091B81FEBB168E7719"
+      valueUuid: "responseEntity"
+    uuid: "8b4b6422-d40e-3398-8e0d-5cb494201c36"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.DataReadFromFilePropertiesException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "message"
+      valueType: "ua.zotin.java.testtask.exceptions.DataReadFromFilePropertiesException"
+      uuid: "exception"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.DataReadFromFilePropertiesException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "message"
+      valueType: "ua.zotin.java.testtask.exceptions.DataReadFromFilePropertiesException"
+      uuid: "exception"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "message1"
+      valueType: "java.lang.String"
+      uuid: "message"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid5"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "message1"
+                    valueType: "java.lang.String"
+                    uuid: "message"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string3"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string6"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "INTERNAL_SERVER_ERROR"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map<java.lang.String,java.lang.String>"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "handleJsonIsNullException"
+    sourceCodeSignature: "ResponseEntity<Map<String, String>> handleJsonIsNullException(JsonIsNullException\
+      \ exception, WebRequest request)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.util.Map<java.lang.String,java.lang.String>"
+    parameters:
+    - name: "exception"
+      type: "ua.zotin.java.testtask.exceptions.JsonIsNullException"
+    - name: "request"
+      type: "org.springframework.web.context.request.WebRequest"
+    instructionFingerprint: "59F56A38B7D78A475ADD66777CD6F32C"
+  paths:
+  - pathId: "path1"
+    testPathName: "handleJsonIsNullExceptionTest"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "212B70B2E91D12A8FCEB14336A312CF3"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "exception"
+      modelFingerprint: "73B9D531F12635EF92093958E5E21DE2"
+      valueUuid: "exception"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "27B75B341AC6D78A588D91B0F6A4C017"
+      valueUuid: "request"
+    - type: "LOCAL_VARIABLE"
+      name: "exception"
+      modelFingerprint: "D1A91F2B75C393CC401B3598303387D9"
+      valueUuid: "exception"
+      methodExercised:
+        expression: "getMessage():message"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid6):string3"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "999CF4B95A6CBA091B81FEBB168E7719"
+      valueUuid: "responseEntity"
+    uuid: "1a1b9408-580e-3352-80d7-e9998fbb4b98"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.JsonIsNullException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "message"
+      valueType: "ua.zotin.java.testtask.exceptions.JsonIsNullException"
+      uuid: "exception"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.JsonIsNullException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "message"
+      valueType: "ua.zotin.java.testtask.exceptions.JsonIsNullException"
+      uuid: "exception"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "message1"
+      valueType: "java.lang.String"
+      uuid: "message"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid6"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "message1"
+                    valueType: "java.lang.String"
+                    uuid: "message"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string3"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string6"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "INTERNAL_SERVER_ERROR"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-INTERNAL_SERVER_ERROR"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map<java.lang.String,java.lang.String>"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "handleMethodArgumentTypeMismatch"
+    sourceCodeSignature: "ResponseEntity<Object> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException\
+      \ exception, WebRequest request)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.lang.Object"
+    parameters:
+    - name: "exception"
+      type: "org.springframework.web.method.annotation.MethodArgumentTypeMismatchException"
+    - name: "request"
+      type: "org.springframework.web.context.request.WebRequest"
+    instructionFingerprint: "7ECB8800331F80ECB5420FF82E45E6A1"
+  paths:
+  - pathId: "path1"
+    testPathName: "handleMethodArgumentTypeMismatchTest"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "24697F1A87191A5CBE3DA2F0555DD233"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "exception"
+      modelFingerprint: "23581C6B7025545781BBD25ED143E6CD"
+      valueUuid: "exception"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "27B75B341AC6D78A588D91B0F6A4C017"
+      valueUuid: "request"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid7):string3"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "96A0E55F64C83DEFD60601AC4002632E"
+      valueUuid: "responseEntity"
+    uuid: "70898a8e-1449-36e7-9ef2-10baaf0c6fbf"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.method.annotation.MethodArgumentTypeMismatchException"
+      uuid: "exception"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid7"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "Invalid type of parameter try to change it in url"
+                    valueType: "java.lang.String"
+                    fixed: true
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string3"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string6"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "BAD_REQUEST"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-BAD_REQUEST"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.Object"
+      uuid: "responseEntity"
+      fixed: true
+- method:
+    name: "handleConstraintViolationException"
+    sourceCodeSignature: "ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException\
+      \ ex, WebRequest request)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.lang.Object"
+    parameters:
+    - name: "ex"
+      type: "jakarta.validation.ConstraintViolationException"
+    - name: "request"
+      type: "org.springframework.web.context.request.WebRequest"
+    instructionFingerprint: "B73733F8A03AF9B57FC1E4322BEEC033"
+  paths:
+  - pathId: "path1"
+    testPathName: "handleConstraintViolationExceptionWhenBirthDateEqualsViolationGetPropertyPathToString"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "1A3CF64BB6D6C8C3F78D509B1822E1A1"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "ex"
+      modelFingerprint: "BB68B4334767E5EFF4DDADA06C7E7B53"
+      valueUuid: "ex"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "27B75B341AC6D78A588D91B0F6A4C017"
+      valueUuid: "request"
+    - type: "LOCAL_VARIABLE"
+      name: "ex"
+      modelFingerprint: "E312F1A118E4FEF07260EA12BB7D06ED"
+      valueUuid: "ex"
+      methodExercised:
+        expression: "getConstraintViolations():constraintViolations"
+    - type: "LOCAL_VARIABLE"
+      name: "violation"
+      modelFingerprint: "F2C98CF777D4BF1A1D125B1A414DB185"
+      valueUuid: "object"
+      methodExercised:
+        expression: "getPropertyPath():path"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid8):string5"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "78EDD4BB04045DFAE58685BCEBCDCF02"
+      valueUuid: "responseEntity"
+    uuid: "3e8d70d8-3a9b-33d1-ae89-36f0a5abb2b0"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "jakarta.validation.ConstraintViolationException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "ex-message"
+        - name: "constraintViolations"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              parameters: []
+              values: []
+            valueType: "java.util.Set"
+            genericValueType: "jakarta.validation.ConstraintViolation<?>"
+            uuid: "constraintViolations"
+      valueType: "jakarta.validation.ConstraintViolationException"
+      uuid: "ex"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "jakarta.validation.ConstraintViolationException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "ex-message"
+        - name: "constraintViolations"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              parameters: []
+              values: []
+            valueType: "java.util.Set"
+            genericValueType: "jakarta.validation.ConstraintViolation<?>"
+            uuid: "constraintViolations"
+      valueType: "jakarta.validation.ConstraintViolationException"
+      uuid: "ex"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.Set"
+      genericValueType: "jakarta.validation.ConstraintViolation<?>"
+      uuid: "constraintViolations"
+    - sapientType: "MOCK"
+      valueType: "jakarta.validation.ConstraintViolation"
+      genericValueType: "?"
+      uuid: "object"
+      collectionUuid: "constraintViolations"
+    - sapientType: "MOCK"
+      valueType: "jakarta.validation.Path"
+      uuid: "path"
+      nameForMock: "path"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid8"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "Now minimal birthDate is 0 ,change your birthDate"
+                    valueType: "java.lang.String"
+                    fixed: true
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string5"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "bodyItem4Value1"
+                    valueType: "java.lang.String"
+                    uuid: "string8"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "BAD_REQUEST"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-BAD_REQUEST"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.Object"
+      uuid: "responseEntity"
+      fixed: true
+    branches:
+    - lineNumber: 126
+      expression: "for-each(violations)"
+      range: "(126,49)-(126,58)"
+      evaluatedAs: true
+    - lineNumber: 127
+      expression: "\\\"birthDate\\\".equals(violation.getPropertyPath().toString())"
+      range: "(127,17)-(127,74)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "handleConstraintViolationExceptionWhenBirthDateNotEqualsViolationGetPropertyPathToString"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "106CBE45A7FDCBD9C6F8908BF0484EB9"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "ex"
+      modelFingerprint: "DBB23BC26011F0F510489AE8F40222AE"
+      valueUuid: "ex"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "27B75B341AC6D78A588D91B0F6A4C017"
+      valueUuid: "request"
+    - type: "LOCAL_VARIABLE"
+      name: "ex"
+      modelFingerprint: "15C944CD7FED2C5494D10D1A1646C629"
+      valueUuid: "ex"
+      methodExercised:
+        expression: "getConstraintViolations():constraintViolations"
+    - type: "LOCAL_VARIABLE"
+      name: "violation"
+      modelFingerprint: "F2C98CF777D4BF1A1D125B1A414DB185"
+      valueUuid: "object"
+      methodExercised:
+        expression: "getPropertyPath():path"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid9):string3"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "5FFDFFD1CEFFCAFD37B1E63C4E110FC9"
+      valueUuid: "responseEntity"
+    uuid: "206ccf5f-eaea-31d8-b206-df04c26aa38a"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "jakarta.validation.ConstraintViolationException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "ex-message"
+        - name: "constraintViolations"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.HashSet"
+              parameters: []
+              values:
+              - sapientType: "MOCK"
+                valueType: "jakarta.validation.ConstraintViolation"
+                genericValueType: "?"
+                uuid: "object"
+                collectionUuid: "constraintViolations"
+            valueType: "java.util.Set"
+            genericValueType: "jakarta.validation.ConstraintViolation<?>"
+            uuid: "constraintViolations"
+      valueType: "jakarta.validation.ConstraintViolationException"
+      uuid: "ex"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "jakarta.validation.ConstraintViolationException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "ex-message"
+        - name: "constraintViolations"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.HashSet"
+              parameters: []
+              values:
+              - sapientType: "MOCK"
+                valueType: "jakarta.validation.ConstraintViolation"
+                genericValueType: "?"
+                uuid: "object"
+                collectionUuid: "constraintViolations"
+            valueType: "java.util.Set"
+            genericValueType: "jakarta.validation.ConstraintViolation<?>"
+            uuid: "constraintViolations"
+      valueType: "jakarta.validation.ConstraintViolationException"
+      uuid: "ex"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.HashSet"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "jakarta.validation.ConstraintViolation"
+          genericValueType: "?"
+          uuid: "object"
+          collectionUuid: "constraintViolations"
+      valueType: "java.util.Set"
+      genericValueType: "jakarta.validation.ConstraintViolation<?>"
+      uuid: "constraintViolations"
+    - sapientType: "MOCK"
+      valueType: "jakarta.validation.ConstraintViolation"
+      genericValueType: "?"
+      uuid: "object"
+      collectionUuid: "constraintViolations"
+    - sapientType: "MOCK"
+      valueType: "jakarta.validation.Path"
+      uuid: "path"
+      nameForMock: "path"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid9"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "Validation failed"
+                    valueType: "java.lang.String"
+                    fixed: true
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string3"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string6"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "BAD_REQUEST"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-BAD_REQUEST"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.Object"
+      uuid: "responseEntity"
+      fixed: true
+    branches:
+    - lineNumber: 126
+      expression: "for-each(violations)"
+      range: "(126,49)-(126,58)"
+      evaluatedAs: true
+    - lineNumber: 127
+      expression: "\\\"birthDate\\\".equals(violation.getPropertyPath().toString())"
+      range: "(127,17)-(127,74)"
+      evaluatedAs: false
+- method:
+    name: "handleException"
+    sourceCodeSignature: "ResponseEntity<Map<String, String>> handleException(Exception\
+      \ ex, WebRequest request)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "java.util.Map<java.lang.String,java.lang.String>"
+    parameters:
+    - name: "ex"
+      type: "java.lang.Exception"
+    - name: "request"
+      type: "org.springframework.web.context.request.WebRequest"
+    instructionFingerprint: "D230C820ADADEA49BACD75091EB7B50C"
+  paths:
+  - pathId: "path1"
+    testPathName: "handleExceptionTest"
+    constructorSignature: "<init>() : void"
+    modelFingerprint: "50C9FC6CFF32F00DD73EEAC49A45C0C9"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "4DB0F57EEFC6BBF1691C61D6F11B96D4"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "ex"
+      modelFingerprint: "2FF17CD741BFA98A540E19AF3107DB80"
+      valueUuid: "ex"
+    - type: "INPUT"
+      name: "request"
+      modelFingerprint: "27B75B341AC6D78A588D91B0F6A4C017"
+      valueUuid: "request"
+    - type: "LOCAL_VARIABLE"
+      name: "request"
+      modelFingerprint: "6409CA32ABDAFB6463B757B294FB099B"
+      valueUuid: "request"
+      methodExercised:
+        expression: "getDescription(includeClientInfo:uniqueUuid10):string3"
+    - type: "STATIC"
+      name: "LocalDateTime.class"
+      modelFingerprint: "937BF7F160CDD0F57BBD9F54F31A90F5"
+      valueUuid: "LocalDateTime.class"
+      methodExercised:
+        expression: "now():localDateTime"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "DDDA0450CFB198045B4E2707D1EB0579"
+      valueUuid: "responseEntity"
+    uuid: "c1dfc091-0a1a-3ad3-a076-944c1748143f"
+    disabled: true
+    failureReason:
+      reason: "CLASS_TYPE_COULD_NOT_BE_MOCKED_AND_NEEDS_TO_STRING"
+    disabledStatusUpdatedBy: "SYSTEM"
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+        parameters: []
+      valueType: "ua.zotin.java.testtask.exceptions.RestResponseEntityExceptionHandler"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "java.lang.Exception"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "message1"
+            valueType: "java.lang.String"
+            uuid: "message"
+      valueType: "java.lang.Exception"
+      uuid: "ex"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.web.context.request.WebRequest"
+      uuid: "request"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_getDescription1"
+      valueType: "java.lang.String"
+      uuid: "string3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "uniqueUuid10"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "java.time.LocalDateTime"
+      uuid: "LocalDateTime.class"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "java.time.LocalDateTime"
+        method: "parse"
+        methodParameters:
+        - name: "hour"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "2024-01-01T10:15:30"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "java.time.LocalDateTime"
+      uuid: "localDateTime"
+      nameForMock: "localDateTime"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.springframework.http.ResponseEntity"
+        parameters:
+        - name: "body"
+          value:
+            sapientType: "COLLECTION"
+            content: !<collection>
+              collectionClass: "java.util.TreeMap"
+              parameters: []
+              values:
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "error"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "message1"
+                    valueType: "java.lang.String"
+                    uuid: "message"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "path"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_getDescription1"
+                    valueType: "java.lang.String"
+                    uuid: "string3"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "status"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "400"
+                    valueType: "java.lang.String"
+                    fixed: true
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+              - sapientType: "PAIR"
+                content: !<pair>
+                  key:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "timestamp"
+                    valueType: "java.lang.String"
+                    fixed: true
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "localDateTime"
+                    valueType: "java.lang.String"
+                    uuid: "string6"
+                valueType: "java.util.Map$Entry"
+                genericValueType: "java.lang.String,java.lang.String"
+            valueType: "java.util.Map"
+            genericValueType: "java.lang.String,java.lang.String"
+            uuid: "treeMap"
+        - name: "status"
+          value:
+            sapientType: "ENUM"
+            content: !<regular>
+              value: "BAD_REQUEST"
+            valueType: "org.springframework.http.HttpStatus"
+            uuid: "Enum-org.springframework.http.HttpStatus-BAD_REQUEST"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.Map<java.lang.String,java.lang.String>"
+      uuid: "responseEntity"
+      fixed: true

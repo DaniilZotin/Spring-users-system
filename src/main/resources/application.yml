@@ -1,0 +1,30 @@
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/users
+#    username: Daniil
+#    password: 1111
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQLDialect
+#    hibernate:
+#      ddl-auto: update
+#server:
+#  port: 8088
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/demo_db
+    username: user
+    password: pass
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8088
+
+
+
+
+
+
+

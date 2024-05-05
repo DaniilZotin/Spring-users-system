@@ -1,0 +1,823 @@
+---
+modelFingerprint: "9C7E3AC28BC47A255F000FED3C6614BB"
+targetClass:
+  fullClassName: "ua.zotin.java.testtask.services.impl.UserServiceImpl"
+methods:
+- method:
+    name: "getUsers"
+    sourceCodeSignature: "List<UserDto> getUsers()"
+    returnType: "java.util.List"
+    genericReturnType: "ua.zotin.java.testtask.dto.UserDto"
+    instructionFingerprint: "E7D401CDDD995B3508F675D698926453"
+  paths:
+  - pathId: "path1"
+    testPathName: "getUsersWhenUsersNotIsEmpty"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "44F8EDE64940056849BDC9A91D774A47"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "B22963B0904A1D18DEA6E8080E262A73"
+      valueUuid: "target"
+    - type: "FIELD"
+      name: "userRepo"
+      modelFingerprint: "4F38DC551D3F4869FD7CD499B9DA0CF9"
+      valueUuid: "userRepo"
+      methodExercised:
+        expression: "findAll():list"
+    - type: "STATIC"
+      name: "UserDto.class"
+      modelFingerprint: "5C64E368F192880F7681A8FB0B2CC264"
+      valueUuid: "UserDto.class"
+      methodExercised:
+        expression: "mapToUserDto(user:object):userDto"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "1912A7483F8F6C3BF1E41CC1CCCC86D2"
+      valueUuid: "arrayList"
+    uuid: "6776bcbb-2f30-3721-a3da-fa62e2b01e41"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.services.impl.UserServiceImpl"
+        parameters:
+        - name: "userRepo"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.repositories.UserRepo"
+            uuid: "userRepo"
+      valueType: "ua.zotin.java.testtask.services.impl.UserServiceImpl"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.repositories.UserRepo"
+      uuid: "userRepo"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "ua.zotin.java.testtask.entities.User"
+          uuid: "object"
+          collectionUuid: "list"
+          explicitCastNeeded: true
+      valueType: "java.util.List"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "UserDto.class"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "userDto"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.entities.User"
+      uuid: "object"
+      collectionUuid: "list"
+      explicitCastNeeded: true
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        collectionClass: "java.util.ArrayList"
+        parameters: []
+        values:
+        - sapientType: "MOCK"
+          valueType: "ua.zotin.java.testtask.dto.UserDto"
+          uuid: "userDto"
+      valueType: "java.util.List"
+      genericValueType: "ua.zotin.java.testtask.dto.UserDto"
+      uuid: "arrayList"
+    branches:
+    - lineNumber: 32
+      expression: "for-each(userRepo.findAll())"
+      range: "(32,24)-(32,41)"
+      evaluatedAs: true
+    - lineNumber: 36
+      expression: "users.isEmpty()"
+      range: "(36,13)-(36,27)"
+      evaluatedAs: false
+  - pathId: "path2"
+    testPathName: "getUsersWhenUsersIsEmptyThrowsUserNotFoundException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "C1F3C806F8D134F05C5E7290BB992700"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "6EFFDD2A03EF4966D8A5DB9AC6FB6AD1"
+      valueUuid: "target"
+    - type: "FIELD"
+      name: "userRepo"
+      modelFingerprint: "367D9645B0D9AB1E98EDA3768BB2CB40"
+      valueUuid: "userRepo"
+      methodExercised:
+        expression: "findAll():list"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "475CB32E5603C89C48252BB287051066"
+      valueUuid: "userNotFoundException"
+    uuid: "f13d8967-4050-320e-a63e-7bf604cdcbc8"
+    disabled: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "ua.zotin.java.testtask.services.impl.UserServiceImpl"
+        parameters:
+        - name: "userRepo"
+          value:
+            sapientType: "MOCK"
+            valueType: "ua.zotin.java.testtask.repositories.UserRepo"
+            uuid: "userRepo"
+      valueType: "ua.zotin.java.testtask.services.impl.UserServiceImpl"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "ua.zotin.java.testtask.repositories.UserRepo"
+      uuid: "userRepo"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      uuid: "list"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "ua.zotin.java.testtask.exceptions.UserNotFoundException"
+        parameters:
+        - name: "message"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "Users were not found"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "ua.zotin.java.testtask.exceptions.UserNotFoundException"
+      uuid: "userNotFoundException"
+      fixed: true
+    branches:
+    - lineNumber: 32
+      expression: "for-each(userRepo.findAll())"
+      range: "(32,24)-(32,41)"
+      evaluatedAs: false
+    - lineNumber: 36
+      expression: "users.isEmpty()"
+      range: "(36,13)-(36,27)"
+      evaluatedAs: true
+- method:
+    name: "createUser"
+    sourceCodeSignature: "User createUser(UserDto userDto)"
+    returnType: "ua.zotin.java.testtask.entities.User"
+    parameters:
+    - name: "userDto"
+      type: "ua.zotin.java.testtask.dto.UserDto"
+    instructionFingerprint: "9946ED3705C3C17A5230F6DD515E77AC"
+  paths:
+  - pathId: "path1"
+    testPathName: "createUserWhenUserRepoExistsByEmailUserDtoGetEmailThrowsUserAlreadyExistsException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "0F0443666C5FE0040F9811F179FB3F20"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "a0e9cf06-c4e9-3c25-9839-2af9119728ed"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 48
+      expression: "userRepo.existsByEmail(userDto.getEmail())"
+      range: "(48,13)-(48,54)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "createUserWhenUserRepoNotExistsByEmailUserDtoGetEmail"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "9591D5CE2AC33CEDB5B9D8D9FA1EB90D"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "e51d5a13-421a-38df-87e7-4dda0d929afa"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 48
+      expression: "userRepo.existsByEmail(userDto.getEmail())"
+      range: "(48,13)-(48,54)"
+      evaluatedAs: false
+- method:
+    name: "updateUserPatch"
+    sourceCodeSignature: "UserDto updateUserPatch(UserDto userDto, Long id)"
+    returnType: "ua.zotin.java.testtask.dto.UserDto"
+    parameters:
+    - name: "userDto"
+      type: "ua.zotin.java.testtask.dto.UserDto"
+    - name: "id"
+      type: "java.lang.Long"
+    tryCatchBlocks:
+    - idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.IllegalAccessException"
+    instructionFingerprint: "26B137870DD0524A18C8DF7EE58A2407"
+  paths:
+  - pathId: "path1"
+    testPathName: "updateUserPatchWhenNotResultThrowsJsonIsNullException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "EAF16EF17E17051E8C6D9270697490B6"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "50e334cb-8a88-3d91-a6b4-ff5ceaac876a"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 67
+      expression: "!result"
+      range: "(67,12)-(67,18)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "updateUserPatchWhenExistUserIsEmptyThrowsUserNotFoundException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "6BB3D71D42415116776D48F8678D0760"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "5dad8e8e-b78c-3e72-b4e8-d93fcfe234c3"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 67
+      expression: "!result"
+      range: "(67,12)-(67,18)"
+      evaluatedAs: false
+    - lineNumber: 75
+      expression: "existUser.isEmpty()"
+      range: "(75,12)-(75,30)"
+      evaluatedAs: true
+  - pathId: "path3"
+    testPathName: "updateUserPatchWhenObjectsNotEqualsUserWithSameEmailGetGetIdIdThrowsUserAlreadyExistsException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "7F201D2CFD0CA7CFD30F335226B8EF79"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "1f8b386c-6281-30ea-84ed-c4d9e3bd2000"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 67
+      expression: "!result"
+      range: "(67,12)-(67,18)"
+      evaluatedAs: false
+    - lineNumber: 75
+      expression: "existUser.isEmpty()"
+      range: "(75,12)-(75,30)"
+      evaluatedAs: false
+    - lineNumber: 83
+      expression: "userDto.getFirstName() != null"
+      range: "(83,13)-(83,42)"
+      evaluatedAs: true
+    - lineNumber: 86
+      expression: "userDto.getLastName() != null"
+      range: "(86,13)-(86,41)"
+      evaluatedAs: true
+    - lineNumber: 89
+      expression: "userDto.getEmail() != null"
+      range: "(89,13)-(89,38)"
+      evaluatedAs: true
+    - lineNumber: 91
+      expression: "userWithSameEmail.isPresent()"
+      range: "(91,16)-(91,44)"
+      evaluatedAs: true
+    - lineNumber: 93
+      expression: "!Objects.equals(userWithSameEmailGet.getId(), id)"
+      range: "(93,21)-(93,69)"
+      evaluatedAs: true
+  - pathId: "path4"
+    testPathName: "updateUserPatchWhenObjectsEqualsUserWithSameEmailGetGetIdIdAndUserDtoGetPhoneIsNotNullAndUserDtoGetBirthDateIsNotNullAn"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "B06DF376F90DD56FF67AD24B7ACF7134"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "72cd839c-b326-387d-a99f-f7024cefdaa2"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 67
+      expression: "!result"
+      range: "(67,12)-(67,18)"
+      evaluatedAs: false
+    - lineNumber: 75
+      expression: "existUser.isEmpty()"
+      range: "(75,12)-(75,30)"
+      evaluatedAs: false
+    - lineNumber: 83
+      expression: "userDto.getFirstName() != null"
+      range: "(83,13)-(83,42)"
+      evaluatedAs: true
+    - lineNumber: 86
+      expression: "userDto.getLastName() != null"
+      range: "(86,13)-(86,41)"
+      evaluatedAs: true
+    - lineNumber: 89
+      expression: "userDto.getEmail() != null"
+      range: "(89,13)-(89,38)"
+      evaluatedAs: true
+    - lineNumber: 91
+      expression: "userWithSameEmail.isPresent()"
+      range: "(91,16)-(91,44)"
+      evaluatedAs: true
+    - lineNumber: 93
+      expression: "!Objects.equals(userWithSameEmailGet.getId(), id)"
+      range: "(93,21)-(93,69)"
+      evaluatedAs: false
+    - lineNumber: 99
+      expression: "userDto.getPhone() != null"
+      range: "(99,13)-(99,38)"
+      evaluatedAs: true
+    - lineNumber: 102
+      expression: "userDto.getBirthDate() != null"
+      range: "(102,13)-(102,42)"
+      evaluatedAs: true
+    - lineNumber: 105
+      expression: "userDto.getAddress() != null"
+      range: "(105,13)-(105,40)"
+      evaluatedAs: true
+- method:
+    name: "updateUserPut"
+    sourceCodeSignature: "UserDto updateUserPut(UserDto userDto, Long id)"
+    returnType: "ua.zotin.java.testtask.dto.UserDto"
+    parameters:
+    - name: "userDto"
+      type: "ua.zotin.java.testtask.dto.UserDto"
+    - name: "id"
+      type: "java.lang.Long"
+    tryCatchBlocks:
+    - idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "java.lang.IllegalAccessException"
+    instructionFingerprint: "CD4FA5D895BFE4E14F15664B6282FBC4"
+  paths:
+  - pathId: "path1"
+    testPathName: "updateUserPutWhenResultNotIsEmptyThrowsJsonIsNullException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "9784B5F35D6D9EF47E74FF7023A4A5CA"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "0eefbd9a-9391-3d21-a8cf-308e76c2d940"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 120
+      expression: "!result.isEmpty()"
+      range: "(120,12)-(120,28)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "updateUserPutWhenExistUserIsEmptyThrowsUserNotFoundException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "9987F2F3753A3758E5C4BFDDB550E379"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "d641a2e0-9efc-31e7-8d11-be39d270d75c"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 120
+      expression: "!result.isEmpty()"
+      range: "(120,12)-(120,28)"
+      evaluatedAs: false
+    - lineNumber: 128
+      expression: "existUser.isEmpty()"
+      range: "(128,12)-(128,30)"
+      evaluatedAs: true
+  - pathId: "path3"
+    testPathName: "updateUserPutWhenObjectsNotEqualsUserWithSameEmailGetGetIdIdThrowsUserAlreadyExistsException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "310D928A94516F594E6D17BD432B5185"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "b30ca772-bacd-3fc0-9250-b3873c497c86"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 120
+      expression: "!result.isEmpty()"
+      range: "(120,12)-(120,28)"
+      evaluatedAs: false
+    - lineNumber: 128
+      expression: "existUser.isEmpty()"
+      range: "(128,12)-(128,30)"
+      evaluatedAs: false
+    - lineNumber: 135
+      expression: "userDto.getFirstName() != null"
+      range: "(135,13)-(135,42)"
+      evaluatedAs: true
+    - lineNumber: 138
+      expression: "userDto.getLastName() != null"
+      range: "(138,13)-(138,41)"
+      evaluatedAs: true
+    - lineNumber: 141
+      expression: "userDto.getEmail() != null"
+      range: "(141,13)-(141,38)"
+      evaluatedAs: true
+    - lineNumber: 143
+      expression: "userWithSameEmail.isPresent()"
+      range: "(143,16)-(143,44)"
+      evaluatedAs: true
+    - lineNumber: 145
+      expression: "!Objects.equals(userWithSameEmailGet.getId(), id)"
+      range: "(145,21)-(145,69)"
+      evaluatedAs: true
+  - pathId: "path4"
+    testPathName: "updateUserPutWhenObjectsEqualsUserWithSameEmailGetGetIdIdAndUserDtoGetPhoneIsNotNullAndUserDtoGetBirthDateIsNotNullAndU"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "882FD64C23F03E5C8F4CDD1015C01CBF"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "2614c3ed-dfc9-318c-9384-998004eeef91"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 120
+      expression: "!result.isEmpty()"
+      range: "(120,12)-(120,28)"
+      evaluatedAs: false
+    - lineNumber: 128
+      expression: "existUser.isEmpty()"
+      range: "(128,12)-(128,30)"
+      evaluatedAs: false
+    - lineNumber: 135
+      expression: "userDto.getFirstName() != null"
+      range: "(135,13)-(135,42)"
+      evaluatedAs: true
+    - lineNumber: 138
+      expression: "userDto.getLastName() != null"
+      range: "(138,13)-(138,41)"
+      evaluatedAs: true
+    - lineNumber: 141
+      expression: "userDto.getEmail() != null"
+      range: "(141,13)-(141,38)"
+      evaluatedAs: true
+    - lineNumber: 143
+      expression: "userWithSameEmail.isPresent()"
+      range: "(143,16)-(143,44)"
+      evaluatedAs: true
+    - lineNumber: 145
+      expression: "!Objects.equals(userWithSameEmailGet.getId(), id)"
+      range: "(145,21)-(145,69)"
+      evaluatedAs: false
+    - lineNumber: 151
+      expression: "userDto.getPhone() != null"
+      range: "(151,13)-(151,38)"
+      evaluatedAs: true
+    - lineNumber: 154
+      expression: "userDto.getBirthDate() != null"
+      range: "(154,13)-(154,42)"
+      evaluatedAs: true
+    - lineNumber: 157
+      expression: "userDto.getAddress() != null"
+      range: "(157,13)-(157,40)"
+      evaluatedAs: true
+- method:
+    name: "deleteUserById"
+    sourceCodeSignature: "void deleteUserById(Long id)"
+    returnType: "void"
+    parameters:
+    - name: "id"
+      type: "java.lang.Long"
+    instructionFingerprint: "42E30B725F1389C6376895C8F392E6FE"
+  paths:
+  - pathId: "path1"
+    testPathName: "deleteUserByIdWhenUserToDeleteIsEmptyThrowsUserNotFoundException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "3A5B7B7065F8009F10A3C5FB83B8DF78"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "92168116-2c31-3719-8276-e9001721f431"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 173
+      expression: "userToDelete.isEmpty()"
+      range: "(173,12)-(173,33)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "deleteUserByIdWhenUserToDeleteNotIsEmpty"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "E5B21DA256F8DCAE9B2511CFC3E64C6C"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "534e9e0e-164a-3b35-a4a4-442bab7b2810"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 173
+      expression: "userToDelete.isEmpty()"
+      range: "(173,12)-(173,33)"
+      evaluatedAs: false
+- method:
+    name: "findByBirthDateBetween"
+    sourceCodeSignature: "List<User> findByBirthDateBetween(LocalDate from, LocalDate\
+      \ to)"
+    returnType: "java.util.List"
+    genericReturnType: "ua.zotin.java.testtask.entities.User"
+    parameters:
+    - name: "from"
+      type: "java.time.LocalDate"
+    - name: "to"
+      type: "java.time.LocalDate"
+    instructionFingerprint: "942AD4A2D18EC3046C2C9A55DEDB72A1"
+  paths:
+  - pathId: "path1"
+    testPathName: "findByBirthDateBetweenWhenUsersBetweenDateIsEmptyThrowsUserNotFoundException"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "323C386C927F9D10C7A76E0EDE5FC650"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "456bbd92-63b1-378b-9228-35ae7d72b1ec"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 184
+      expression: "usersBetweenDate.isEmpty()"
+      range: "(184,12)-(184,37)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "findByBirthDateBetweenWhenUsersBetweenDateNotIsEmpty"
+    constructorSignature: "<init>(ua.zotin.java.testtask.repositories.UserRepo) :\
+      \ void"
+    modelFingerprint: "D115B8B3D7C3143410334AF97F41AB03"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "25b188b7-cb6e-355e-8386-41da4df3cd09"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 184
+      expression: "usersBetweenDate.isEmpty()"
+      range: "(184,12)-(184,37)"
+      evaluatedAs: false
+- method:
+    name: "hasNonNullField"
+    sourceCodeSignature: "boolean hasNonNullField(Object obj)"
+    returnType: "boolean"
+    parameters:
+    - name: "obj"
+      type: "java.lang.Object"
+    tryCatchBlocks:
+    - idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.IllegalAccessException"
+    instructionFingerprint: "EA5258E9EBFB99B6C0156D4987A68AE9"
+  paths:
+  - pathId: "path1"
+    testPathName: "hasNonNullFieldWhenObjIsNull"
+    modelFingerprint: "A7224F8AE36A1CB351D9903B2B0AC891"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "6bbfb457-7b6c-341a-90ae-e494dc5cba10"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 195
+      expression: "obj == null"
+      range: "(195,13)-(195,23)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "hasNonNullFieldWhenValueIsNotNull"
+    modelFingerprint: "311D7F0BDB71C7DA2C0E4C1C80380AD9"
+    problemWasSolvedByProver: false
+    inputParameters: []
+    uuid: "057df81d-0fb2-3e0d-b776-ffb81be38414"
+    disabled: false
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.lang.Class.getDeclaredFields() : java.lang.reflect.Field[]"
+    allValues: []
+    branches:
+    - lineNumber: 195
+      expression: "obj == null"
+      range: "(195,13)-(195,23)"
+      evaluatedAs: false
+    - lineNumber: 202
+      expression: "for-each(fields)"
+      range: "(202,28)-(202,33)"
+      evaluatedAs: true
+    - lineNumber: 207
+      expression: "value != null"
+      range: "(207,21)-(207,33)"
+      evaluatedAs: true
+  - pathId: "path3"
+    testPathName: "hasNonNullFieldWhenValueIsNull"
+    modelFingerprint: "EDF7C2C1CE7B856147B45B104C3D8650"
+    problemWasSolvedByProver: false
+    inputParameters: []
+    uuid: "54e55974-84c6-39c5-8373-b3c76ab91086"
+    disabled: false
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.lang.Class.getDeclaredFields() : java.lang.reflect.Field[]"
+    allValues: []
+    branches:
+    - lineNumber: 195
+      expression: "obj == null"
+      range: "(195,13)-(195,23)"
+      evaluatedAs: false
+    - lineNumber: 202
+      expression: "for-each(fields)"
+      range: "(202,28)-(202,33)"
+      evaluatedAs: true
+    - lineNumber: 207
+      expression: "value != null"
+      range: "(207,21)-(207,33)"
+      evaluatedAs: false
+  - pathId: "path4"
+    testPathName: "hasNonNullFieldWhenValueIsNotNullAndCaughtIllegalAccessException"
+    modelFingerprint: "4BC35119A313E9584BEEA4A51B709D8F"
+    problemWasSolvedByProver: false
+    inputParameters: []
+    uuid: "3845c7c7-7111-3e66-80f4-f388dd6e4639"
+    disabled: false
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.lang.Class.getDeclaredFields() : java.lang.reflect.Field[]"
+    allValues: []
+    branches:
+    - lineNumber: 195
+      expression: "obj == null"
+      range: "(195,13)-(195,23)"
+      evaluatedAs: false
+    - lineNumber: 202
+      expression: "for-each(fields)"
+      range: "(202,28)-(202,33)"
+      evaluatedAs: true
+    - lineNumber: 207
+      expression: "value != null"
+      range: "(207,21)-(207,33)"
+      evaluatedAs: true
+    - lineNumber: 212
+      expression: "catch-exception (IllegalAccessException)"
+      range: "(212,15)-(212,45)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.IllegalAccessException"
+- method:
+    name: "hasEmptyField"
+    sourceCodeSignature: "String hasEmptyField(Object obj)"
+    returnType: "java.lang.String"
+    parameters:
+    - name: "obj"
+      type: "java.lang.Object"
+    tryCatchBlocks:
+    - idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "java.lang.IllegalAccessException"
+    instructionFingerprint: "4DC9AC5C9CA100E8D76DDBCD5BE9EE19"
+  paths:
+  - pathId: "path1"
+    testPathName: "hasEmptyFieldWhenObjIsNull"
+    modelFingerprint: "D75B08D679C6A8A9F190A2EC0C56C042"
+    problemWasSolvedByProver: true
+    inputParameters: []
+    uuid: "23941c4c-d1dc-3559-8c17-5862fe931587"
+    disabled: false
+    allValues: []
+    branches:
+    - lineNumber: 221
+      expression: "obj == null"
+      range: "(221,13)-(221,23)"
+      evaluatedAs: true
+  - pathId: "path2"
+    testPathName: "hasEmptyFieldWhenFieldGetNameEqualsId"
+    modelFingerprint: "3C7A569CE26E359902173E281C13C9A5"
+    problemWasSolvedByProver: false
+    inputParameters: []
+    uuid: "fe225a70-d01d-35ea-8ae9-96018dee35ad"
+    disabled: false
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.lang.Class.getDeclaredFields() : java.lang.reflect.Field[]"
+    allValues: []
+    branches:
+    - lineNumber: 221
+      expression: "obj == null"
+      range: "(221,13)-(221,23)"
+      evaluatedAs: false
+    - lineNumber: 229
+      expression: "for-each(fields)"
+      range: "(229,28)-(229,33)"
+      evaluatedAs: true
+    - lineNumber: 232
+      expression: "field.getName().equals(\\\"id\\\")"
+      range: "(232,16)-(232,43)"
+      evaluatedAs: true
+  - pathId: "path6"
+    testPathName: "hasEmptyFieldWhenFieldGetNameEqualsIdAndCaughtIllegalAccessException"
+    modelFingerprint: "B6466334862037CE4117EC12D1509FED"
+    problemWasSolvedByProver: false
+    inputParameters: []
+    uuid: "78441826-5348-370f-b7c0-8fb6d9870b0a"
+    disabled: false
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.lang.Class.getDeclaredFields() : java.lang.reflect.Field[]"
+    allValues: []
+    branches:
+    - lineNumber: 221
+      expression: "obj == null"
+      range: "(221,13)-(221,23)"
+      evaluatedAs: false
+    - lineNumber: 229
+      expression: "for-each(fields)"
+      range: "(229,28)-(229,33)"
+      evaluatedAs: true
+    - lineNumber: 232
+      expression: "field.getName().equals(\\\"id\\\")"
+      range: "(232,16)-(232,43)"
+      evaluatedAs: true
+    - lineNumber: 243
+      expression: "catch-exception (IllegalAccessException)"
+      range: "(243,15)-(243,45)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "java.lang.IllegalAccessException"
+  - pathId: "path3"
+    testPathName: "hasEmptyFieldWhenValueIsNull"
+    modelFingerprint: "7D47AD93C81936BA233C7E0F078CAC5E"
+    problemWasSolvedByProver: false
+    inputParameters: []
+    uuid: "2d46896a-714d-3c04-99cd-5bf573523807"
+    disabled: false
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.lang.Class.getDeclaredFields() : java.lang.reflect.Field[]"
+    allValues: []
+    branches:
+    - lineNumber: 221
+      expression: "obj == null"
+      range: "(221,13)-(221,23)"
+      evaluatedAs: false
+    - lineNumber: 229
+      expression: "for-each(fields)"
+      range: "(229,28)-(229,33)"
+      evaluatedAs: true
+    - lineNumber: 232
+      expression: "field.getName().equals(\\\"id\\\")"
+      range: "(232,16)-(232,43)"
+      evaluatedAs: false
+    - lineNumber: 238
+      expression: "value == null"
+      range: "(238,21)-(238,33)"
+      evaluatedAs: true
+  - pathId: "path7"
+    testPathName: "hasEmptyFieldWhenValueIsNullAndCaughtIllegalAccessException"
+    modelFingerprint: "0F89E3C5ED18766D389F61A970B4C78B"
+    problemWasSolvedByProver: false
+    inputParameters: []
+    uuid: "ed4b6b78-e107-345e-b55a-7091a06cde6a"
+    disabled: false
+    failureReason:
+      reason: "METHOD_WITHOUT_EXPRESSION_SUPPORT"
+      details: "Expression missing: java.lang.Class.getDeclaredFields() : java.lang.reflect.Field[]"
+    allValues: []
+    branches:
+    - lineNumber: 221
+      expression: "obj == null"
+      range: "(221,13)-(221,23)"
+      evaluatedAs: false
+    - lineNumber: 229
+      expression: "for-each(fields)"
+      range: "(229,28)-(229,33)"
+      evaluatedAs: true
+    - lineNumber: 232
+      expression: "field.getName().equals(\\\"id\\\")"
+      range: "(232,16)-(232,43)"
+      evaluatedAs: false
+    - lineNumber: 238
+      expression: "value == null"
+      range: "(238,21)-(238,33)"
+      evaluatedAs: true
+    - lineNumber: 243
+      expression: "catch-exception (IllegalAccessException)"
+      range: "(243,15)-(243,45)"
+      evaluatedAs: true
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "java.lang.IllegalAccessException"
