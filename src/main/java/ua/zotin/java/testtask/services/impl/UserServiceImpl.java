@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -27,11 +28,9 @@ public class UserServiceImpl implements UserService {
     private final UserRepo userRepo;
     @Override
     public List<UserDto> getUsers() {
-        List<UserDto> users = new ArrayList<>();
+        List<UserDto> users = userRepo.findAll().stream().map(UserDto::mapToUserDto).collect(Collectors.toList());
 
-        for(User user: userRepo.findAll()){
-            users.add(UserDto.mapToUserDto(user));
-        }
+
 
         if (users.isEmpty()) {
             log.info("Users were not found");
