@@ -14,14 +14,14 @@ services:
     volumes:
       - pg_demo:/var/lib/postgresql/data
     ports:
-      - "127.0.0.1:5433:5432"
+      - "5432:5432"
   app:
     restart: always
     build: .
     ports:
-      - "8088:8080"
+      - "8088:8088"
     depends_on:
       - demo_db
     environment:
-      SPRING_DATASOURCE_URL: 'jdbc:postgresql://localhost:5433/demo_db'
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://demo_db:5432/demo_db'
       JAVA_OPTS: '-Xmx512'
