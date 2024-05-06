@@ -4,7 +4,7 @@
     <img src="images_for_readme/clear_solution_logo.jpg" alt="Logo" width="200" height="200">
   </a>
 
-<h3 align="center" >It is my Construct CV</h3>
+<h3 align="center" >Spring users system</h3>
 
 </div>
 
@@ -86,7 +86,12 @@ however if we do not update years we will not get this exception, and the person
 ### 3. You can use port 8088 to check app
 
 
-
+## Additional info
+You can also use swagger to test
+```sh
+  http://localhost:8088/swagger-ui/index.html#/
+```
+![img.png](images_for_readme/swagger.png)
 
 
 
