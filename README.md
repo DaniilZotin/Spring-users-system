@@ -36,12 +36,38 @@ A system for working with users that has the following endpoints:
 
 ## Preview
 ### Get all users
-![img.png](images/get_users.png)
+![img.png](images_for_readme/get_users.png)
 
 ### Create user
-![img_1.png](images/create_user.png)
+![img_1.png](images_for_readme/create_user.png)
 
-###
+### Update user (one/some fields)
+I implemented the following logic: The user
+cannot change the id because it can lead to data 
+inconsistency. Therefore, the id in the url must match the id in the json, 
+or user can do not write id in the body of request
+![img.png](images_for_readme/update_user.png)
+
+### Update user (all fields)
+![img.png](images_for_readme/update_all_fields.png)
+
+### Delete user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##
+
 
 
 

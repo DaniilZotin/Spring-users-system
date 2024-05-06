@@ -15,6 +15,8 @@ import ua.zotin.java.testtask.services.UserService;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 @RestController
 @RequestMapping("/api/users")
@@ -58,11 +60,13 @@ public class UserController {
     }
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable("id") Long id) {
+    public ResponseEntity<Map<String, String>> deleteUser(@PathVariable("id") Long id) {
 
         userService.deleteUserById(id);
 
-        return new ResponseEntity<>("You have deleted customer with id: " + id, HttpStatus.OK);
+        Map<String, String> map =  new TreeMap<>();
+        map.put("result:", "you have deleted user with id: " + id);
+        return new ResponseEntity<>(map, HttpStatus.OK);
     }
 
     @GetMapping("/searchByBirthDateRange")
