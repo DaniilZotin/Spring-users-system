@@ -61,15 +61,29 @@ or user can do not write id in the body of request
 I chose the approach according to which the developer will enter the name of the field from 
 which he wants to transfer data from the properties 
 file right next to the annotation (argument), and if he wants to change the path of the file, 
-then for this he will already 
+then for this he must 
 change the settings inside the annotation.
 ![img.png](images_for_readme/annotation.png)
 
 ![img_1.png](images_for_readme/properties_file.png)
 
+### 2. About min years to register
+If you change the minimum age in the file, then try to update the user, with birthDate, 
+then we will get an error because the fields will validate again, so I did at least minimal processing of this error
+![img.png](images_for_readme/years.png)
 
+however if we do not update years we will not get this exception, and the person will remain with their date of birth
 
-
+## How to install ? 
+### 1. Clone the repo
+```sh
+    https://github.com/DaniilZotin/Spring-users-system.git
+```
+### 2. Up Docker 
+```sh
+     docker-compose up --build
+```
+### 3. You can use port 8088 to check app
 
 
 

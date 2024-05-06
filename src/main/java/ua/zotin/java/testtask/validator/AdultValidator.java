@@ -48,6 +48,7 @@ public class AdultValidator implements ConstraintValidator<Adult, LocalDate> {
 
         LocalDate now = LocalDate.now();
         Period period = Period.between(birthDate, now);
+        log.info("Period of year " + period.getYears());
         return period.getYears() >= minAge;
     }
 }
