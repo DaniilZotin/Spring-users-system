@@ -18,11 +18,13 @@ creating new projects and supporting existing ones.
 
 ## About the project
 A system for working with users that has the following endpoints:
-1. $\color{#E3C678}{{POST}}$  /api/customers - Create customer
-2. $\color{#55AE5B}{{GET}}$ /api/customers - Read all customers
-3. $\color{#55AE5B}{{GET}}$ /api/customers/{id} - Read customer
-4. $\color{#706CD4}{{PUT}}$ /api/customers/{id} - Update customer
-5. $\color{#FF0000}{{DELETE}}$ /api/customers/{id} - Delete customer
+
+1. $\color{#55AE5B}{{GET}}$ /api/users/all - Show all customers in the system
+2. $\color{#E3C678}{{POST}}$ /api/users/create - Create user (years validation)
+3. $\color{#7A4CB4}{{PATCH}}$ /api/users/update/{id} -  Update one/some user fields
+4. $\color{#706CD4}{{PUT}}$ /api/users/update/{id}- Update user with all fields
+5. $\color{#FF0000}{{DELETE}}$ /api/users/delete/{id} - Delete user
+6. $\color{#55AE5B}{{GET}}$ /api/users/searchByBirthDateRange?from=yyyy-mm-dd&to=yyyy-mm-dd - Search for users by birth date range.
 
 
 ## Build with
