@@ -4,6 +4,7 @@ package ua.zotin.java.testtask.exception.handler;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import java.util.*;
 
 
 @RestControllerAdvice
+@Slf4j
 public class RestResponseEntityExceptionHandler  {
 
     @ExceptionHandler(UserNotFoundException.class)
@@ -122,6 +124,7 @@ public class RestResponseEntityExceptionHandler  {
             }
         }
         map.put("error", "Validation failed");
+        log.info("Exception is " + ex.getMessage());
         map.put("path", request.getDescription(false));
         map.put("status", "400");
         map.put( "timestamp", String.valueOf(LocalDateTime.now()));

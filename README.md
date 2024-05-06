@@ -34,7 +34,14 @@ A system for working with users that has the following endpoints:
 * [![POSTGRESQL][POSTGRESQL]][POSTGRESQL-url]
 
 
+## Preview
+### Get all users
+![img.png](images/get_users.png)
 
+### Create user
+![img_1.png](images/create_user.png)
+
+###
 
 
 

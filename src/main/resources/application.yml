@@ -22,6 +22,6 @@ spring:
       ddl-auto: update
   sql:
     init:
-      mode: never
+      mode: always
 server:
   port: 8088
