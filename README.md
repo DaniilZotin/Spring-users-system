@@ -52,6 +52,10 @@ or user can do not write id in the body of request
 ![img.png](images_for_readme/update_all_fields.png)
 
 ### Delete user
+![img.png](images_for_readme/delete_user.png)
+
+### Search user by birthdate range 
+![img.png](images_for_readme/search_user.png)
 
 
 
@@ -59,14 +63,6 @@ or user can do not write id in the body of request
 
 
 
-
-
-
-
-
-
-
-##
 
 
 
