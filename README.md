@@ -1,14 +1,11 @@
 <br />
 <div align="center">
   <a href="https://github.com/DaniilZotin/Spring-users-system">
-    <img src="images/clear_solution_logo.jpg" alt="Logo" width="200" height="200">
+    <img src="images_for_readme/clear_solution_logo.jpg" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center" >It is my Construct CV</h3>
 
-
-
-  </p>
 </div>
 
 ## Introduction
@@ -58,11 +55,17 @@ or user can do not write id in the body of request
 ![img.png](images_for_readme/search_user.png)
 
 
+## Moments that I want to clarify
 
+### 1. @Adult annotation
+I chose the approach according to which the developer will enter the name of the field from 
+which he wants to transfer data from the properties 
+file right next to the annotation (argument), and if he wants to change the path of the file, 
+then for this he will already 
+change the settings inside the annotation.
+![img.png](images_for_readme/annotation.png)
 
-
-
-
+![img_1.png](images_for_readme/properties_file.png)
 
 
 
