@@ -30,6 +30,16 @@ A system for working with users that has the following endpoints:
 * [![OpenJDK][OpenJDK]][Docker-url]
 * [![POSTGRESQL][POSTGRESQL]][POSTGRESQL-url]
 
+## Set up
+### 1. Clone the repo
+```sh
+    https://github.com/DaniilZotin/Spring-users-system.git
+```
+### 2. Up Docker
+```sh
+     docker-compose up --build
+```
+### 3. You can use port 8088 to check app
 
 ## Preview
 ### Get all users
@@ -73,17 +83,6 @@ then we will get an error because the fields will validate again, so I did at le
 ![img.png](images_for_readme/years.png)
 
 however if we do not update years we will not get this exception, and the person will remain with their date of birth
-
-## How to install ? 
-### 1. Clone the repo
-```sh
-    https://github.com/DaniilZotin/Spring-users-system.git
-```
-### 2. Up Docker 
-```sh
-     docker-compose up --build
-```
-### 3. You can use port 8088 to check app
 
 
 ## Additional info

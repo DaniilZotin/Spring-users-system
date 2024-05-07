@@ -74,46 +74,9 @@ public class UserServiceImpl implements UserService {
             throw new JsonIsNullException("Your request does not have json input");
         }
 
-        Optional<User> existUser = userRepo.findById(id);
+        User updatedUser = updateUser(userDto, id);
 
-        log.info("User you try to update with Patch is " + existUser);
-        if(existUser.isEmpty()){
-            log.info("User you try to change is empty");
-            throw new UserNotFoundException("User with id " + id + " was not found ");
-        }
-
-        User user = existUser.get();
-
-
-        if (userDto.getFirstName() != null) {
-            user.setFirstName(userDto.getFirstName());
-        }
-        if (userDto.getLastName() != null) {
-            user.setLastName(userDto.getLastName());
-        }
-        if (userDto.getEmail() != null) {
-            Optional<User> userWithSameEmail = userRepo.findByEmail(userDto.getEmail());
-            if(userWithSameEmail.isPresent()){
-                User userWithSameEmailGet = userWithSameEmail.get();
-                if (!Objects.equals(userWithSameEmailGet.getId(), id)) {
-                    throw new UserAlreadyExistsException("User with email " + userDto.getEmail() + " already exists");
-                }
-            }
-            user.setEmail(userDto.getEmail());
-        }
-        if (userDto.getPhone() != null) {
-            user.setPhone(userDto.getPhone());
-        }
-        if (userDto.getBirthDate() != null) {
-            user.setBirthDate(userDto.getBirthDate());
-        }
-        if (userDto.getAddress() != null) {
-            user.setAddress(userDto.getAddress());
-        }
-
-        userRepo.save(user);
-
-        return UserDto.mapToUserDto(user);
+        return UserDto.mapToUserDto(updatedUser);
     }
 
 
@@ -126,47 +89,9 @@ public class UserServiceImpl implements UserService {
             throw new JsonIsNullException("Body of your request does not have - " + result);
         }
 
-        Optional<User> existUser = userRepo.findById(id);
+        User updatedUser = updateUser(userDto, id);
 
-        log.info("User you try to update with Patch is " + existUser);
-        if(existUser.isEmpty()){
-            log.info("User you try to change is empty");
-            throw new UserNotFoundException("User with id " + id + " was not found ");
-        }
-
-        User user = existUser.get();
-
-        if (userDto.getFirstName() != null) {
-            user.setFirstName(userDto.getFirstName());
-        }
-        if (userDto.getLastName() != null) {
-            user.setLastName(userDto.getLastName());
-        }
-        if (userDto.getEmail() != null) {
-            Optional<User> userWithSameEmail = userRepo.findByEmail(userDto.getEmail());
-            if(userWithSameEmail.isPresent()){
-                User userWithSameEmailGet = userWithSameEmail.get();
-                if (!Objects.equals(userWithSameEmailGet.getId(), id)) {
-                    throw new UserAlreadyExistsException("User with email " + userDto.getEmail() + " already exists");
-                }
-            }
-            user.setEmail(userDto.getEmail());
-        }
-        if (userDto.getPhone() != null) {
-            user.setPhone(userDto.getPhone());
-        }
-        if (userDto.getBirthDate() != null) {
-            user.setBirthDate(userDto.getBirthDate());
-        }
-        if (userDto.getAddress() != null) {
-            user.setAddress(userDto.getAddress());
-        }
-
-
-
-        userRepo.save(user);
-
-        return UserDto.mapToUserDto(user);
+        return UserDto.mapToUserDto(updatedUser);
     }
 
     @Override
@@ -250,4 +175,50 @@ public class UserServiceImpl implements UserService {
 
         return emptyFields.toString();
     }
+
+    public User updateUser(UserDto userDto, Long id){
+        Optional<User> existUser = userRepo.findById(id);
+
+        log.info("User you try to update is " + existUser);
+        if(existUser.isEmpty()){
+            log.info("User you try to change is empty");
+            throw new UserNotFoundException("User with id " + id + " was not found ");
+        }
+
+        User user = existUser.get();
+
+        if (userDto.getFirstName() != null) {
+            user.setFirstName(userDto.getFirstName());
+        }
+        if (userDto.getLastName() != null) {
+            user.setLastName(userDto.getLastName());
+        }
+        if (userDto.getEmail() != null) {
+            Optional<User> userWithSameEmail = userRepo.findByEmail(userDto.getEmail());
+            if(userWithSameEmail.isPresent()){
+                User userWithSameEmailGet = userWithSameEmail.get();
+                if (!Objects.equals(userWithSameEmailGet.getId(), id)) {
+                    throw new UserAlreadyExistsException("User with email " + userDto.getEmail() + " already exists");
+                }
+            }
+            user.setEmail(userDto.getEmail());
+        }
+        if (userDto.getPhone() != null) {
+            user.setPhone(userDto.getPhone());
+        }
+        if (userDto.getBirthDate() != null) {
+            user.setBirthDate(userDto.getBirthDate());
+        }
+        if (userDto.getAddress() != null) {
+            user.setAddress(userDto.getAddress());
+        }
+
+        userRepo.save(user);
+
+        return user;
+    }
 }
+
+
+
+
