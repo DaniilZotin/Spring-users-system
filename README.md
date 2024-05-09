@@ -29,6 +29,7 @@ A system for working with users that has the following endpoints:
 * [![Docker][Docker]][Docker-url]
 * [![OpenJDK][OpenJDK]][Docker-url]
 * [![POSTGRESQL][POSTGRESQL]][POSTGRESQL-url]
+* [![SWAGGER][SWAGGER]][Swagger-url]
 
 ## Set up
 ### 1. Clone the repo
@@ -121,3 +122,6 @@ You can also use swagger to test
 
 [POSTGRESQL]: https://img.shields.io/badge/postgresql-4169E1?style=for-the-badge&logo=postgresql&logoColor=white
 [POSTGRESQL-url]: https://www.docker.com/
+
+[SWAGGER]: https://img.shields.io/badge/swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black
+[Swagger-url]: https://www.docker.com/
